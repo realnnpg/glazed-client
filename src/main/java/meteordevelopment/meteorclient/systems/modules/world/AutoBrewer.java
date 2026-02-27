@@ -11,8 +11,8 @@ import meteordevelopment.meteorclient.settings.SettingGroup;
 import meteordevelopment.meteorclient.systems.modules.Categories;
 import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.meteorclient.utils.misc.MyPotion;
+import meteordevelopment.meteorclient.utils.misc.Names;
 import meteordevelopment.meteorclient.utils.player.InvUtils;
-import net.minecraft.client.resource.language.I18n;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -95,7 +95,7 @@ public class AutoBrewer extends Module {
         }
 
         if (slot == -1) {
-            error("You do not have any %s left in your inventory... disabling.", I18n.translate(ingredient.getTranslationKey()));
+            error("You do not have any %s left in your inventory... disabling.", Names.get(ingredient));
             toggle();
             return true;
         }

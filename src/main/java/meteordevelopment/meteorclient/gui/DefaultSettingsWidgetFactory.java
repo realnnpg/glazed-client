@@ -23,8 +23,8 @@ import meteordevelopment.meteorclient.gui.widgets.pressable.WPlus;
 import meteordevelopment.meteorclient.renderer.Fonts;
 import meteordevelopment.meteorclient.settings.*;
 import meteordevelopment.meteorclient.utils.Utils;
+import meteordevelopment.meteorclient.utils.misc.Names;
 import meteordevelopment.meteorclient.utils.render.color.SettingColor;
-import net.minecraft.client.resource.language.I18n;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -345,7 +345,7 @@ public class DefaultSettingsWidgetFactory extends SettingsWidgetFactory {
 
     private void potionW(WTable table, PotionSetting setting) {
         WHorizontalList list = table.add(theme.horizontalList()).expandX().widget();
-        WItemWithLabel item = list.add(theme.itemWithLabel(setting.get().potion, I18n.translate(setting.get().potion.getItem().getTranslationKey()))).widget();
+        WItemWithLabel item = list.add(theme.itemWithLabel(setting.get().potion, Names.get(setting.get().potion.getItem()))).widget();
 
         WButton button = list.add(theme.button("Select")).expandCellX().widget();
         button.action = () -> {

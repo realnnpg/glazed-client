@@ -14,8 +14,8 @@ import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.mixin.KeyBindingAccessor;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.client.option.KeyBinding;
-import net.minecraft.client.resource.language.I18n;
 import net.minecraft.command.CommandSource;
+import net.minecraft.text.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,7 +91,7 @@ public class InputCommand extends Command {
                 info("Active keypress handlers: ");
                 for (int i = 0; i < activeHandlers.size(); i++) {
                     KeypressHandler handler = activeHandlers.get(i);
-                    info("(highlight)%d(default) - (highlight)%s %d(default) ticks left out of (highlight)%d(default).", i, I18n.translate(handler.key.getId()), handler.ticks, handler.totalTicks);
+                    info("(highlight)%d(default) - (highlight)%s %d(default) ticks left out of (highlight)%d(default).", i, Text.translatable(handler.key.getId()).getString(), handler.ticks, handler.totalTicks);
                 }
             }
             return SINGLE_SUCCESS;

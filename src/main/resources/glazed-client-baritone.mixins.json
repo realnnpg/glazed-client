@@ -1,0 +1,1 @@
+{"required":true,"package":"meteordevelopment.meteorclient.mixin.baritone","compatibilityLevel":"JAVA_21","plugin":"meteordevelopment.meteorclient.MixinPlugin","client":["ComeCommandMixin"],"injectors":{"defaultRequire":1}}

@@ -13,7 +13,6 @@ import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.Block;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
-import net.minecraft.client.resource.language.I18n;
 import net.minecraft.client.sound.WeightedSoundSet;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EntityType;
@@ -68,15 +67,15 @@ public class Names {
     }
 
     public static String get(StatusEffect effect) {
-        return statusEffectNames.computeIfAbsent(effect, effect1 -> StringHelper.stripTextFormat(I18n.translate(effect1.getTranslationKey())));
+        return statusEffectNames.computeIfAbsent(effect, effect1 -> StringHelper.stripTextFormat(Text.translatable(effect1.getTranslationKey()).getString()));
     }
 
     public static String get(Item item) {
-        return itemNames.computeIfAbsent(item, item1 -> StringHelper.stripTextFormat(I18n.translate(item1.getTranslationKey())));
+        return itemNames.computeIfAbsent(item, item1 -> StringHelper.stripTextFormat(Text.translatable(item1.getTranslationKey()).getString()));
     }
 
     public static String get(Block block) {
-        return blockNames.computeIfAbsent(block, block1 -> StringHelper.stripTextFormat(I18n.translate(block1.getTranslationKey())));
+        return blockNames.computeIfAbsent(block, block1 -> StringHelper.stripTextFormat(Text.translatable(block1.getTranslationKey()).getString()));
     }
 
     /**
@@ -92,7 +91,7 @@ public class Names {
             .map(Names::get)
             .orElseGet(() -> {
                 String key = "enchantment." + enchantment1.getValue().toTranslationKey();
-                String translated = I18n.translate(key);
+                String translated = Text.translatable(key).getString();
                 return translated == key ? enchantment1.getValue().toString() : translated;
             }));
     }
@@ -102,7 +101,7 @@ public class Names {
     }
 
     public static String get(EntityType<?> entityType) {
-        return entityTypeNames.computeIfAbsent(entityType, entityType1 -> StringHelper.stripTextFormat(I18n.translate(entityType1.getTranslationKey())));
+        return entityTypeNames.computeIfAbsent(entityType, entityType1 -> StringHelper.stripTextFormat(Text.translatable(entityType1.getTranslationKey()).getString()));
     }
 
     public static String get(ParticleType<?> type) {

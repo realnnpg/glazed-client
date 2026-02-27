@@ -9,7 +9,7 @@ import meteordevelopment.meteorclient.gui.GuiTheme;
 import meteordevelopment.meteorclient.gui.screens.settings.base.CollectionListSettingScreen;
 import meteordevelopment.meteorclient.gui.widgets.WWidget;
 import meteordevelopment.meteorclient.settings.Setting;
-import net.minecraft.client.resource.language.I18n;
+import meteordevelopment.meteorclient.utils.misc.Names;
 import net.minecraft.registry.Registries;
 import net.minecraft.sound.SoundEvent;
 
@@ -29,7 +29,7 @@ public class SoundEventListSettingScreen extends CollectionListSettingScreen<Sou
     protected String[] getValueNames(SoundEvent value) {
         return new String[]{
             value.id().toString(),
-            I18n.translate("subtitles." + value.id().getPath())
+            Names.getSoundName(value.id())
         };
     }
 }
